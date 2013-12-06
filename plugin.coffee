@@ -58,4 +58,5 @@ module.exports = (env, callback) ->
   run through this plugin, we need to keep this patched with the below...
   ###
   env.registerContentPlugin 'scripts', '**/*.*(coffee)', BrowserifyPlugin
+  env.registerContentPlugin 'scripts', '**/*.*(litcoffee)', BrowserifyPlugin
   callback()
