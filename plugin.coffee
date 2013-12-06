@@ -52,5 +52,10 @@ module.exports = (env, callback) ->
   BrowserifyPlugin.fromFile = (filepath, callback) ->
     callback null, new BrowserifyPlugin filepath
 
-  env.registerContentPlugin 'scripts', '**/*.*(js|coffee)', BrowserifyPlugin
+  # env.registerContentPlugin 'scripts', '**/*.*(js|coffee)', BrowserifyPlugin
+  ###
+  until we are provided a way to exclude specific files/directories from being
+  run through this plugin, we need to keep this patched with the below...
+  ###
+  env.registerContentPlugin 'scripts', '**/*.*(coffee)', BrowserifyPlugin
   callback()
